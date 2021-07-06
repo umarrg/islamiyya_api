@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  mdb:
+    image: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "umarabox"
+      MONGO_INITDB_ROOT_PASSWORD: "secret"
+    networks:
+      - mynet
+    volumes:
+      - /home/umarabox/Documents/new project/islamiyya_api/storage
+networks:
+  mynet:
+    driver: bridge
