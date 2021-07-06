@@ -1,6 +1,7 @@
 
 const express = require('express');
 const bcrypt = require('bcrypt');
+
 const jsonwebtoken = require('jsonwebtoken');
 
 
@@ -43,6 +44,7 @@ module.exports = () => {
     });
 
    
+
     api.post('/register', async (req, res) => {
         try {
             const savedUser = await UserDao.addNew(req.body);

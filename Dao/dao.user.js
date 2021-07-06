@@ -10,12 +10,12 @@ class UserDao {
                 if (err) {
                     reject(err);
                 }
-                savedUser.password = '************';// masked password field
+                
                 resolve(savedUser);
             });
         });
     }
-
+   
     getOne(id) {
         return new Promise((resolve, reject) => {
             UserModel.findById(id, { password: 0 }, (err, singleUser) => { //exclude password
@@ -49,9 +49,9 @@ class UserDao {
         });
     }
 
-    update(password, username, email, name, db,) {
+    update(password,  email, name, ) {
         return new Promise((resolve, reject) => {
-            UserModel.findByIdAndUpdate(id, { $set: { password, username, email, name, db} }, { new: true }, (err, result) => {
+            UserModel.findByIdAndUpdate(id, { $set: { password, email, name,} }, { new: true }, (err, result) => {
                 if (err) {
                     reject(err);
                 }

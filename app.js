@@ -22,13 +22,13 @@ mongoose
     }
   )
   .then(() => {
-    console.log("connected to the db");
+    console.log("connected to mongoDb");
   })
   .catch((err) => {
     console.log("connection failed " + err);
   });
 
-//middleware
+
 app.use(express.json());
 
 app.get("/", (req, res) => {
